@@ -1,0 +1,102 @@
+@startuml
+class Employee {
+  -firstName: String
+  -lastName: String
+  -socialSecurityNumber: String
+  +getFirstName(): String
+  +setFirstName(firstName: String): void
+  +getLastName(): String
+  +setLastName(lastName: String): void
+  +getSocialSecurityNumber(): String
+  +setSocialSecurityNumber(socialSecurityNumber: String): void
+  +toString(): String
+}
+
+class SalariedEmployee extends Employee {
+  -weeklySalary: int
+  +getWeeklySalary(): int
+  +setWeeklySalary(weeklySalary: int): void
+  +toString(): String
+}
+
+class HourlyEmployee extends Employee {
+  -wage: int
+  -hoursWorked: int
+  +getWage(): int
+  +setWage(wage: int): void
+  +getHoursWorked(): int
+  +setHoursWorked(hoursWorked: int): void
+  +toString(): String
+}
+
+class CommissionEmployee extends Employee {
+  -commissionRate: int
+  -grossSales: int
+  +getCommissionRate(): int
+  +setCommissionRate(commissionRate: int): void
+  +getGrossSales(): int
+  +setGrossSales(grossSales: int): void
+  +toString(): String
+}
+
+class BaseEmployee extends Employee {
+  -baseSalary: int
+  +getBaseSalary(): int
+  +setBaseSalary(baseSalary: int): void
+  +toString(): String
+}
+
+
+object "<u>employeeOne:SalariedEmployee</u>" as SEF {
+  firstName = "Joe"
+  lastName = "Jones"
+  socialSecurityNumber = "111-11-1111"
+  weeklySalary = 2500
+}
+
+object "<u>employeeTwo:HourlyEmployee</u>" as HEF {
+  firstName = "Stephanie"
+  lastName = "Smith"
+  socialSecurityNumber = "222-22-2222"
+  wage = 25
+  hoursWorked = 32
+}
+
+object "<u>employeeThree:HourlyEmployee</u>" as HES {
+  firstName = "Mary"
+  lastName = "Quinn"
+  socialSecurityNumber = "333-33-3333"
+  wage = 19
+  hoursWorked = 47
+}
+
+object "<u>employeeFour:CommissionEmployee</u>" as CEF {
+  firstName = "Nicole"
+  lastName = "Dior"
+  socialSecurityNumber = "444-44-4444"
+  commissionRate = 15
+  grossSales = 50000
+}
+
+object "<u>employeeFive:SalariedEmployee</u>" as SES {
+  firstName = "Renwa"
+  lastName = "Chanel"
+  socialSecurityNumber = "555-55-5555"
+  weeklySalary = 1700
+}
+
+object "<u>employeeSix:BaseEmployee</u>" as BEF {
+  firstName = "Mike"
+  lastName = "Davenport"
+  socialSecurityNumber = "666-66-6666"
+  baseSalary = 95000
+}
+
+object "<u>employeeSeven:CommissionEmployee</u>" as CES {
+  firstName = "Mahnaz"
+  lastName = "Vaziri"
+  socialSecurityNumber = "777-77-7777"
+  commissionRate = 22
+  grossSales = 40000
+}
+@enduml
